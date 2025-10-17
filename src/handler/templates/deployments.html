@@ -1,0 +1,25 @@
+
+{{ template "header.html"}}
+            
+            <div class="dashboard">
+                <div class="dashboard__container">
+                    {{ template "combobox.html" .Namespaces}}
+                    <table>
+                        <tr>
+                            <th>{{ .Titulo01 }}</th>
+                            <th>{{ .Titulo02 }}</th>
+                            <th>{{ .Titulo03 }}</th>
+                            <th>{{ .Titulo04 }}</th>
+                        </tr>
+                        {{ range .LinhasTabela }}
+                        <tr>
+                            <td>{{ .Coluna01 }}</td>
+                            <td>{{ .Coluna02 }}</td>
+                            <td>{{ .Coluna03 }}</td>
+                            <td>{{ .Coluna04 }}</td>
+                        </tr>
+                        {{ end }}
+                    </table>             
+                </div>
+            </div>
+            {{ template "footer.html"  }}

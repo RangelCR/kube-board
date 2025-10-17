@@ -1,0 +1,124 @@
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.nav {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(15, 23, 42, 1);
+  border-right: 1px solid rgba(69, 85, 112, 1);
+}
+
+nav {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.dashboard {
+  flex: 1;
+}
+
+.dashboard__container {
+  max-width: 1462px;
+  margin: 0 auto;
+  padding: 0 16px 16px 16px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__item {
+  display: flex;
+  width: 100%;
+}
+
+.menu__item__link {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 40px;
+  width: 100%;
+}
+
+.menu__item__link:hover, .menu__item__link--active {
+  background: rgba(105, 214, 255, 0.24);
+}
+
+.namespace {
+  margin-bottom: 48px;
+}
+
+.namespace__title {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26.63px;
+  text-align: left;
+  color: #ffffff;
+  margin-top: 72px;
+  margin-bottom: 24px;
+}
+
+.namespace__select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("../img/arrow-down.svg") no-repeat right 28px center rgba(46, 58, 80, 1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 27px;
+  width: 396px;
+  border-radius: 10px;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  outline: none;
+}
+
+.namespace__select:focus {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Estilo da tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header Cells */
+th {
+  background-color: rgba(15, 23, 42, 1);
+  padding: 24px 16px;
+  border-top: 1px solid rgba(69, 85, 112, 1);
+  border-bottom: 1px solid rgba(69, 85, 112, 1);
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.94px;
+  text-align: left;
+  color: #fff;
+}
+
+/* Data Cells */
+td {
+  padding: 8px;
+  border-bottom: 1px solid rgba(69, 85, 112, 1);
+  text-align: left;
+  font-family: "Inter", sans-serif;
+}
+
+tr > td {
+  padding: 24px 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: left;
+  color: #fff;
+}

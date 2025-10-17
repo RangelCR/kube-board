@@ -1,0 +1,13 @@
+<div class="namespace">
+    <h1 class="namespace__title">Namespace</h1>
+    <select class="namespace__select" id="namespaceSelect" required>
+        <!-- <option value="" disabled selected>Selecione aqui</option>
+        <option value="opcao1">Opção 1</option>
+        <option value="opcao2">Opção 2</option>
+        <option value="opcao3">Opção 3</option> -->
+
+        {{ range . }}
+        <option value="{{ . }}">{{ . }}</option>
+        {{ end }}
+    </select>
+</div>

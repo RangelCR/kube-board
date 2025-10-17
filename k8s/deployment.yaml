@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-board
+spec:
+  selector:
+    matchLabels:
+      app: kube-board
+  template:
+    metadata:
+      labels:
+        app: kube-board
+    spec:
+      serviceAccount: kube-board
+      containers:
+      - name: kube-board
+        image: fabricioveronez/kube-board:v4
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+---
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-board
+spec:
+  selector:
+    app: kube-board
+  ports:
+  - port: 80
+    nodePort: 30000
+    targetPort: 3000
+  type: NodePort

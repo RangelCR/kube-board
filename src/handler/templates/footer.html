@@ -1,0 +1,47 @@
+</div>
+</main>
+<script>
+    // Função para redirecionar com o parâmetro namespace
+    function redirecionarComNamespace() {
+        // Obtém o valor selecionado na combobox
+        var namespaceSelecionado = document.getElementById("namespaceSelect").value;
+        // Se houver um valor selecionado, redireciona para a mesma URL com o parâmetro namespace
+        if (namespaceSelecionado) {
+            // Obtém a URL atual
+            var urlAtual = window.location.href;
+            // Verifica se o parâmetro namespace já existe na URL
+            if (urlAtual.indexOf('namespace=') === -1) {
+                // Adiciona o parâmetro namespace à URL atual
+                var novaUrl = urlAtual + (urlAtual.indexOf('?') === -1 ? '?' : '&') + 'namespace=' + encodeURIComponent(namespaceSelecionado);
+                // Redireciona para a nova URL
+                window.location.href = novaUrl;
+            } else {
+                // Atualiza o valor do parâmetro namespace na URL
+                var novaUrl = urlAtual.replace(/(\?|&)namespace=.*?(&|$)/, '$1namespace=' + encodeURIComponent(namespaceSelecionado) + '$2');
+                // Redireciona para a nova URL
+                window.location.href = novaUrl;
+            }
+        }
+    }
+
+    // Adiciona um listener para o evento de alteração na combobox
+    document.getElementById("namespaceSelect").addEventListener("change", redirecionarComNamespace);
+
+    // Função para obter o valor do parâmetro namespace da URL
+    function obterValorNamespaceDaUrl() {
+        // Obtém a URL atual
+        var urlAtual = window.location.href;
+        // Verifica se o parâmetro namespace está presente na URL
+        if (urlAtual.indexOf('namespace=') !== -1) {
+            // Obtém o valor do parâmetro namespace da URL
+            var valorNamespace = urlAtual.match(/[?&]namespace=([^&]*)/)[1];
+            // Seleciona a opção correspondente na combobox
+            document.getElementById("namespaceSelect").value = valorNamespace;
+        }
+    }
+
+    // Chama a função para obter o valor do parâmetro namespace da URL quando a página é carregada
+    obterValorNamespaceDaUrl();
+</script>
+</body>
+</html>
