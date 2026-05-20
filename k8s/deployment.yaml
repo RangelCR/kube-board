@@ -28,10 +28,9 @@ kind: Service
 metadata:
   name: kube-board
 spec:
+spec:
   selector:
     app: kube-board
   ports:
   - port: 80
-    nodePort: 30000
     targetPort: 3000
-  type: NodePort
