@@ -14,7 +14,7 @@ spec:
       serviceAccount: kube-board
       containers:
       - name: kube-board
-        image: fabricioveronez/kube-board:v4
+        image: rangelcr/kube-board:v1
         resources:
           limits:
             memory: "128Mi"
